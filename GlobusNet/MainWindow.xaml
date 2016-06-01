@@ -1,0 +1,314 @@
+﻿<Window x:Class="GlobusNet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Globus-Net" Width="800" Height="600" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen" Icon="/GlobusNet;component/globus.png">
+    <Window.Background>
+        <ImageBrush ImageSource="/GlobusNet;component/abstract.jpg" Stretch="UniformToFill" TileMode="None" />
+    </Window.Background>
+    <Window.Resources>
+        <Style x:Key="tKey" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#9000" />
+            <Setter Property="Height" Value="22" />
+            <Setter Property="Margin" Value="0,0,0,5" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="tVal" TargetType="TextBox">
+            <Setter Property="Margin" Value="0,-3,0,8" />
+            <Setter Property="Height" Value="22" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Rectangle VerticalAlignment="Top" Height="30">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFACC4E0" Offset="0" />
+                <GradientStop Color="#FFF7FBFE" Offset="1" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid Margin="0,6,0,0">
+            <TabControl Background="Transparent" Padding="0,5,5,0" Margin="5,0,0,5" BorderThickness="0,1,0,0" SelectionChanged="TabControl_SelectionChanged">
+                <TabItem Header="Разплащания">
+                    <Grid>
+                        <Grid>
+                            <DataGrid x:Name="dgUsers" Margin="0,0,300,30" Background="#CFFF" BorderBrush="#6000" BorderThickness="1" AutoGenerateColumns="False" CanUserResizeRows="False" IsReadOnly="True" HeadersVisibility="Column" VerticalGridLinesBrush="Transparent" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" SelectionMode="Single">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="" Width="30">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Width="20" Height="20" Source="{Binding StarImage}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="" Width="30">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Width="20" Height="20" Source="{Binding OnlineStatusImage}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="" Width="30">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Width="20" Height="20" Source="{Binding StatusImage}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="Име" Binding="{Binding Fullname}" Width="160" />
+                                    <DataGridTextColumn Header="Адрес" Binding="{Binding Address}" Width="*" />
+                                    <DataGridTextColumn Header="" Binding="{Binding Subscription.Service.Name}" Width="160">
+                                        <DataGridTextColumn.CellStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextAlignment" Value="Right"/>
+                                            </Style>
+                                        </DataGridTextColumn.CellStyle>
+                                    </DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                            <Border VerticalAlignment="Bottom" Margin="0,0,300,0" Height="30" Background="#6000" Padding="4,0">
+                                <Grid Height="22">
+                                    <ComboBox SelectionChanged="dfCB_SelectionChanged" x:Name="dfCB" Width="100" HorizontalAlignment="Left">
+                                        <ComboBox.Items>
+                                            <ComboBoxItem Content="Всички" IsSelected="True" />
+                                            <ComboBoxItem Content="Неплатили" />
+                                            <ComboBoxItem Content="Платили" />
+                                        </ComboBox.Items>
+                                    </ComboBox>
+                                    <ComboBox SelectionChanged="dfCB_SelectionChanged" SelectedIndex="0" x:Name="dfBR" Width="120" HorizontalAlignment="Left" Margin="105,0,0,0" />
+                                    <TextBox x:Name="dfTB" KeyUp="TextBox_KeyUp" Margin="230,0,0,0" />
+                                    <Image Source="/search_icon.png" HorizontalAlignment="Right" Margin="4" />
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="sidePane" Background="#9FFF" HorizontalAlignment="Right" Width="295" Margin="0" BorderBrush="#6000" BorderThickness="1">
+                                <Grid Margin="5,0" x:Name="SidePanel">
+                                    <Border BorderThickness="0" BorderBrush="#3000" Height="260" VerticalAlignment="Top">
+                                        <StackPanel>
+                                            <Grid Margin="0,0,0,5">
+                                                <Image Opacity="0.3" Width="100" Height="100" Source="/GlobusNet;component/icon-user.png" HorizontalAlignment="Left" Margin="0,-8,0,-100" />
+                                                <TextBlock x:Name="ueSave" TextAlignment="Right" FontWeight="Bold" Margin="80,5,5,0">
+                                                    <Hyperlink Click="Hl_ANew_Click">добавяне</Hyperlink>
+                                                    <Run Text="|" />
+                                                    <Hyperlink Click="Hl_ADel_Click">изтриване</Hyperlink>
+                                                    <Run Text="|" />
+                                                    <Hyperlink Click="Hl_Save_Click">запазване</Hyperlink>
+                                                </TextBlock>
+                                            </Grid>
+                                            <StackPanel Orientation="Horizontal">
+                                                <StackPanel Width="75">
+                                                    <TextBlock Style="{StaticResource tKey}" Text="Потребител" />
+                                                    <TextBlock Style="{StaticResource tKey}" Text="Име" />
+                                                    <TextBlock Style="{StaticResource tKey}" Text="Телефон" />
+                                                    <TextBlock Style="{StaticResource tKey}" Text="Адрес" />
+                                                    <TextBlock Style="{StaticResource tKey}" Text="IP Адрес" />
+                                                    <TextBlock Style="{StaticResource tKey}" Text="Нова парола" x:Name="pwTb" />
+                                                    <TextBlock Style="{StaticResource tKey}" Text="Клон" />
+                                                </StackPanel>
+                                                <StackPanel Width="200" Margin="5,0,0,0">
+                                                    <TextBox Style="{StaticResource tVal}" Text="{Binding Name}" x:Name="ueName" />
+                                                    <TextBox Style="{StaticResource tVal}" Text="{Binding Fullname}" x:Name="ueFullname" />
+                                                    <TextBox Style="{StaticResource tVal}" Text="{Binding Phone}" x:Name="uePhone" />
+                                                    <TextBox Style="{StaticResource tVal}" Text="{Binding Address}" x:Name="ueAddress" />
+                                                    <TextBox Style="{StaticResource tVal}" Text="{Binding IPAddress}" x:Name="ueIPAddress" />
+                                                    <PasswordBox Height="22" x:Name="pwNew" Margin="0,-3,0,5" />
+                                                    <ComboBox x:Name="cbBranch" Height="22" SelectedItem="{Binding Branch}">
+                                                        <ComboBox.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding Name}" />
+                                                            </DataTemplate>
+                                                        </ComboBox.ItemTemplate>
+                                                    </ComboBox>
+                                                    <Button Margin="0,5" Height="22" x:Name="btnFUser" Click="btnFUser_Click" />
+                                                    <TextBlock>
+                                                        <Hyperlink x:Name="tbRequest" Click="Hl_DelRequest_Click"></Hyperlink>
+                                                    </TextBlock>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <Grid Margin="0,260,0,0">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Subscription.Service.Name}" FontSize="18" FontWeight="Bold" />
+                                            <TextBlock Foreground="#C000">
+                                                <Run Text="{Binding Path=Subscription.MonthsActive, Mode=OneWay}" />
+                                                <Run Text="МЕСЕЦА" />
+                                            </TextBlock>
+                                            <Border Background="#3000" Padding="2" Margin="0,5">
+                                                <Grid>
+                                                    <TextBlock Text="Текущо плащане:" />
+                                                    <TextBlock TextAlignment="Right" FontWeight="Bold" Foreground="{Binding Path=DaysBalanceColor, Mode=OneWay}">
+                                                        <Run Text="{Binding Path=DaysBalance, Mode=OneWay}" />
+                                                        <Run Text="дни" />
+                                                    </TextBlock>
+                                                </Grid>
+                                            </Border>
+                                            <TextBlock FontWeight="Bold" TextAlignment="Right">
+                                                <Hyperlink Click="Hl_Add_Click">добавяне</Hyperlink>
+                                                <Run Text="|" />
+                                                <Hyperlink Click="Hl_Del_Click">изтриване</Hyperlink>
+                                                <Run Text="|" />
+                                                <Hyperlink Click="Hl_Pro_Click">детайли</Hyperlink>
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <DataGrid x:Name="dgPay" Margin="0,90,0,28" ItemsSource="{Binding Payments}" IsReadOnly="True" Background="#3FFF" BorderThickness="0" HeadersVisibility="Column" HorizontalGridLinesBrush="#999" VerticalGridLinesBrush="#CCC" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" AutoGenerateColumns="False" SelectionMode="Single">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="На" Width="100" Binding="{Binding Path=Paid, StringFormat='dd/MM/yyyy HH:mm'}" />
+                                                <DataGridTextColumn Header="За" Width="*" Binding="{Binding Span}" />
+                                                <DataGridTextColumn Header="До" Width="80" Binding="{Binding Path=Till, StringFormat='dd/MM/yyyy'}" />
+                                                <DataGridTextColumn Header="Сума" Width="60" Binding="{Binding Path=Estimate, StringFormat='0.00'}" />
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,8" Width="60" Text="Общо:" />
+                                        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,8" Width="55" Text="{Binding PaymentSum, StringFormat='0.00 лв.'}" FontWeight="Bold" />
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="VoIP">
+                    <Grid>
+                        <TextBlock Text="Непознат формат на JSON резултата." Height="22" TextAlignment="Center" FontWeight="Bold" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Ценоразпис">
+                    <Grid Margin="0,5,0,0">
+                        <Border x:Name="plAddPane" VerticalAlignment="Top" Height="80" Background="#3000" Padding="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="10" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="10" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="10" />
+                                    <ColumnDefinition Width="120" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="22" />
+                                    <RowDefinition Height="4" />
+                                    <RowDefinition Height="22" />
+                                    <RowDefinition Height="40*" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Добавяне на клон" />
+                                <TextBlock Text="Добавяне на услуга" Grid.Column="2" />
+                                
+                                <TextBox x:Name="plaBranch" Grid.Row="1" />
+                                <TextBox x:Name="plaService" Grid.Row="1" Grid.Column="2" />
+
+                                <TextBlock Text="Нова цена за клон" Grid.Column="4" />
+                                <TextBlock Text="услуга" Grid.Column="6" />
+                                <TextBlock Text="цени" Grid.Column="8" />
+
+                                <ComboBox x:Name="plaNBranch" Grid.Row="1" Grid.Column="4" Height="22">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" />
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                <ComboBox x:Name="plaNService" Grid.Row="1" Grid.Column="6" Height="22">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" />
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                
+                                <Grid Grid.Column="8" Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="38" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="38" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="38" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox x:Name="plaN1" Text="0" />
+                                    <TextBox x:Name="plaN2" Grid.Column="2" Text="0" />
+                                    <TextBox x:Name="plaN3" Grid.Column="4" Text="0" />
+                                </Grid>
+                                
+                                <Button Click="plaBranch_Click" Content="добавяне" Grid.Row="3" />
+                                <Button Click="plaService_Click" Content="добавяне" Grid.Row="3" Grid.Column="2" />
+                                <Button Click="plaPrice_Click" Content="добавяне" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="6" />
+                            </Grid>
+                        </Border>
+                        <Grid Margin="0,85,0,0" x:Name="plGrid">
+                            <DataGrid x:Name="plDg" Margin="0,0,0,30" Background="#6FFF" BorderThickness="0" HeadersVisibility="Column" IsReadOnly="True" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" AutoGenerateColumns="False" SelectionMode="Single" HorizontalGridLinesBrush="#6000" VerticalGridLinesBrush="#3000" RowBackground="#3FFF" SelectedCellsChanged="plDg_SelectedCellsChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Клон" Width="*" Binding="{Binding Branch}" />
+                                    <DataGridTextColumn Header="Услуга" Width="*" Binding="{Binding Service}" />
+                                    <DataGridTextColumn Header="1 месец" Width="100" Binding="{Binding Price1}" />
+                                    <DataGridTextColumn Header="3 месеца" Width="100" Binding="{Binding Price3}" />
+                                    <DataGridTextColumn Header="6 месеца" Width="100" Binding="{Binding Price6}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Grid VerticalAlignment="Bottom" Height="22" Width="284">
+                                <ComboBox x:Name="plfBranches" HorizontalAlignment="Left" Width="140" SelectedIndex="0" SelectionChanged="plf_SelectionChanged" />
+                                <ComboBox x:Name="plfServices" HorizontalAlignment="Right" Width="140" SelectedIndex="0" SelectionChanged="plf_SelectionChanged" />
+                            </Grid>
+                            <Button IsEnabled="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="22" Content="редакция" x:Name="plEdit" Click="plEdit_Click" />
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Администрация" x:Name="tabAdmin">
+                    <Grid Margin="0,5,0,0">
+                        <Grid Background="#3000" Width="300" HorizontalAlignment="Right">
+                            <Grid Margin="5">
+                                <TextBlock Text="Ниво на достъп за касиер" />
+                                <ComboBox x:Name="adACLcb" VerticalAlignment="Top" Margin="0,20" SelectedIndex="0" />
+                                <DataGrid x:Name="adACLdg" Margin="0,50,0,40" HeadersVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" VerticalGridLinesBrush="Transparent" HorizontalGridLinesBrush="#3000" Background="#3FFF" BorderThickness="0" AutoGenerateColumns="False">
+                                    <DataGrid.Columns>
+                                        <DataGridCheckBoxColumn Width="20" Binding="{Binding c}" />
+                                        <DataGridTextColumn Width="*" Binding="{Binding Branch}" IsReadOnly="True" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <TextBlock VerticalAlignment="Bottom" Margin="0,24" FontStyle="Italic" Text="* нито един избран клон означава пълен достъп" Foreground="#3FFF" />
+                                <Button Click="btnACL_Click" VerticalAlignment="Bottom" Content="запазване" />
+                            </Grid>
+                        </Grid>
+                        <Grid Margin="0,0,305,0" Background="#1000">
+                            <StackPanel Margin="5">
+                                <TextBlock FontWeight="Bold" Text="Настройки на системата" Margin="0,0,0,10" />
+                                
+                                <TextBlock Text="E-mail на администратор" />
+                                <TextBox x:Name="ademail" Margin="0,5,0,10" Width="200" HorizontalAlignment="Left" />
+
+                                <TextBlock Text="Изпращане на e-mail при:" />
+                                <CheckBox x:Name="adcb0" Margin="0,2" Content="Подаване на заявка за изключване на абонат" />
+                                <CheckBox x:Name="adcb1" Margin="0,2" Content="Подаване на заявка за включване на абонат" />
+                                <CheckBox x:Name="adcb2" Margin="0,2" Content="Включване на абонат" />
+                                <CheckBox x:Name="adcb3" Margin="0,2" Content="Изключване на абонат" />
+                                <CheckBox x:Name="adcb4" Margin="0,2" Content="Регистриране на плащане" />
+                                <CheckBox x:Name="adcb5" Margin="0,2" Content="Премахване на запис за плащане" />
+                                <CheckBox x:Name="adcb6" Margin="0,2" Content="Добавяне на нов потребител" />
+                                <Button Click="btnSettings_Click" VerticalAlignment="Bottom" Content="запазване" HorizontalAlignment="Left" Width="200" Margin="0,10" />
+
+                                <TextBlock FontWeight="Bold" Text="Смяна на парола" Margin="0,0,0,10" />
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Width="205" Text="Касиер/админ:" />
+                                    <TextBlock Text="Нова парола:" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <ComboBox x:Name="adaucp" Width="200" />
+                                    <TextBox x:Name="adaunp" Width="120" Margin="5,0" />
+                                    <Button Click="btnChangeAUPass_Click" Content="промени паролата" Width="120" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" TextAlignment="Right" Margin="5">
+                <Run x:Name="tbLoginName" />
+                <Hyperlink Click="Hl_Logout_Click">изход</Hyperlink>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>

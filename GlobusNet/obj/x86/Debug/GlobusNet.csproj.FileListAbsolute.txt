@@ -1,0 +1,88 @@
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\bin\Debug\GlobusNet.exe
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\bin\Debug\GlobusNet.pdb
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\MainWindow.baml
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\App.g.cs
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet_MarkupCompile.cache
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.g.resources
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.Properties.Resources.resources
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.exe
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.pdb
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\Login.baml
+C:\Users\Boyan Balkanski\Documents\Visual Studio 2010\Projects\GlobusNet\GlobusNet\obj\x86\Debug\Login.g.cs
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.exe
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.pdb
+D:\Work\GlobusNet\GlobusNet\bin\Debug\GlobusNet.exe
+D:\Work\GlobusNet\GlobusNet\bin\Debug\GlobusNet.pdb
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\Login.baml
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\MainWindow.baml
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\Login.g.cs
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\MainWindow.g.cs
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\App.g.cs
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet_MarkupCompile.cache
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.g.resources
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.Properties.Resources.resources
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\UserWindow.baml
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\UserWindow.g.cs
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\PaymentWindow.baml
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\PaymentWindow.g.cs
+D:\Work\GlobusNet\GlobusNet\bin\Debug\GlobusNet.exe.manifest
+D:\Work\GlobusNet\GlobusNet\bin\Debug\GlobusNet.application
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.exe.manifest
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.application
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.exe
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.pdb
+D:\GlobusNet\GlobusNet\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\GlobusNet\GlobusNet\obj\x86\Debug\Login.baml
+D:\GlobusNet\GlobusNet\obj\x86\Debug\MainWindow.baml
+D:\GlobusNet\GlobusNet\obj\x86\Debug\PaymentWindow.baml
+D:\GlobusNet\GlobusNet\obj\x86\Debug\UserWindow.baml
+D:\GlobusNet\GlobusNet\obj\x86\Debug\Login.g.cs
+D:\GlobusNet\GlobusNet\obj\x86\Debug\MainWindow.g.cs
+D:\GlobusNet\GlobusNet\obj\x86\Debug\PaymentWindow.g.cs
+D:\GlobusNet\GlobusNet\obj\x86\Debug\UserWindow.g.cs
+D:\GlobusNet\GlobusNet\obj\x86\Debug\App.g.cs
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet_MarkupCompile.cache
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.g.resources
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.Properties.Resources.resources
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\GlobusNet\GlobusNet\bin\Debug\GlobusNet.exe.manifest
+D:\GlobusNet\GlobusNet\bin\Debug\GlobusNet.application
+D:\GlobusNet\GlobusNet\bin\Debug\GlobusNet.exe
+D:\GlobusNet\GlobusNet\bin\Debug\GlobusNet.pdb
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.exe.manifest
+D:\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.application
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\PricelistWindow.baml
+D:\Work\GlobusNet\GlobusNet\obj\x86\Debug\PricelistWindow.g.cs
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.exe
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.pdb
+D:\Dropbox\GlobusNet\GlobusNet\bin\Debug\GlobusNet.exe.manifest
+D:\Dropbox\GlobusNet\GlobusNet\bin\Debug\GlobusNet.application
+D:\Dropbox\GlobusNet\GlobusNet\bin\Debug\GlobusNet.exe
+D:\Dropbox\GlobusNet\GlobusNet\bin\Debug\GlobusNet.pdb
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\Login.baml
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\MainWindow.baml
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\PaymentWindow.baml
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\PricelistWindow.baml
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\UserWindow.baml
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\Login.g.cs
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\MainWindow.g.cs
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\PaymentWindow.g.cs
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\PricelistWindow.g.cs
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\UserWindow.g.cs
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\App.g.cs
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet_MarkupCompile.cache
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.g.resources
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.Properties.Resources.resources
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.exe.manifest
+D:\Dropbox\GlobusNet\GlobusNet\obj\x86\Debug\GlobusNet.application

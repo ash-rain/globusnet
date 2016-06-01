@@ -1,0 +1,20 @@
+﻿<Window x:Class="GlobusNet.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Globus-Net" Height="400" Width="600" Icon="/GlobusNet;component/globus.png" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Topmost="False" ShowInTaskbar="True">
+    <Window.Background>
+        <ImageBrush ImageSource="/GlobusNet;component/background.jpg" />
+    </Window.Background>
+    <Border BorderThickness="5" BorderBrush="#5a4b45">
+        <StackPanel Width="260" Height="140">
+            <TextBlock FontWeight="Black" Foreground="#CC000000" Text="Потребителско име:" />
+            <ComboBox x:Name="tbUser" Margin="5" IsEditable="True" KeyUp="tbUser_KeyUp" />
+            <TextBlock FontWeight="Black" Foreground="#CC000000" Text="Парола:" />
+            <PasswordBox x:Name="tbPass" Margin="5,0" KeyUp="tbPass_KeyUp" />
+            <Button Content="Вход" FontWeight="Bold" Click="Button_Click" Margin="5,15,5,0" />
+            <TextBlock TextAlignment="Right" Margin="7,0" FontWeight="Bold">
+                <Hyperlink Click="Hyperlink_Click">изход</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Border>
+</Window>
